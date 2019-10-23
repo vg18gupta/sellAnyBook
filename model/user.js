@@ -7,12 +7,51 @@ const userSchema = new Schema({
         required: true,
         trim: true
     },
-    lend: String,
-    share: String,
-    sell: String,
+    lend: {
+        isUsed: { 
+            type: Boolean,
+            default: false
+        },
+        values: {
+            price: String
+              
+        }
+    },
+    share: {
+        isUsed: { 
+            type: Boolean,
+            default: false
+        },
+        values: {
+            exchangeBook: String
+
+        }
+    },
+    sell: {
+        isUsed: { 
+            type: Boolean,
+            default: false
+        },
+        values: {
+            sellPrice: String
+            
+        }
+    },
+
+
+  /*  booksIWantToRead: {
+        type: String,
+        require: true,
+        values: {
+
+        }
+    },*/
+    //
+
+
     books: {
         type:[{ 
-            type: Schema.types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Books'
         }]
     }

@@ -16,11 +16,12 @@ const BookSchema = new Schema({
          require: true
      },
      author: {
-         type: Schema.types.ObjectId,
+         type: Schema.Types.ObjectId,
          ref: 'user'
-     }
+     },
 
-
+    //  boool
+  
 
 })
 
